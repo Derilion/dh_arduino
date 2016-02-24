@@ -21,26 +21,39 @@
 // # Note: You should connect the GND pin from the DF-MD v1.3 to your MCU controller. They should share the GND pins.
 // #
 
-int E1 = 6;
-int M1 = 7;
-int E2 = 5;                         
-int M2 = 4;                           
+int Ehr = 6;
+int Mhr = 7;
+
+int Evr = 5;                         
+int Mvr = 4;
+
+int Ehl = 14;                         
+int Mhl = 9;
+
+int Evl = 15;                         
+int Mvl = 8;                           
 
 void setup() 
 { 
-    pinMode(M1, OUTPUT);   
-    pinMode(M2, OUTPUT); 
+    pinMode(Mhr, OUTPUT);   
+    pinMode(Mvl, OUTPUT);
+    pinMode(Mhl, OUTPUT);
+    pinMode(Mvr, OUTPUT); 
 } 
 
 void loop() 
 { 
   int value;
-  for(value = 0 ; value <= 255; value+=5) 
+  //for(value = 0 ; value <= 255; value+=5) 
   { 
-    digitalWrite(M1,HIGH);   
-    digitalWrite(M2,HIGH);       
-    analogWrite(E1, value);   //PWM Speed Control
-    analogWrite(E2, value);   //PWM Speed Control
+    digitalWrite(Mhr,LOW);   
+    digitalWrite(Mvl,LOW); 
+    digitalWrite(Mvr,LOW);
+    digitalWrite(Mhl,LOW);      
+    analogWrite(Ehr, 0);   //PWM Speed Control
+    analogWrite(Evl, 0);   //PWM Speed Control
+    analogWrite(Evr, 0);   //PWM Speed Control
+    analogWrite(Ehl, 0);   //PWM Speed Control
     delay(30); 
   }  
 }
