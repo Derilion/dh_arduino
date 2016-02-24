@@ -19,7 +19,7 @@ void setup() {
 
 void loop () 
 {
-  range = distanceSensor_test();
+  uint16_t range = distanceSensor_test();
 }
 
 
@@ -29,11 +29,11 @@ void loop ()
 
 uint16_t distanceSensor_test()
 {
-  uint16_t value = analogRead (pin);
-  uint16_t range //= get_gp2d12 (value);
+  uint16_t value = analogRead (distPin);
+  uint16_t range; //= get_gp2d12 (value);
   if (value < 10) range = 10;
   else range = value;
-  range  = ((67870.0 / (range - 3.0)) - 40.0)
+  range  = ((67870.0 / (range - 3.0)) - 40.0);
 // unneccesary range returns for serial monitor
 //  Serial.println (value);
 //  Serial.print (range);
