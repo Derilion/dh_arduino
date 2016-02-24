@@ -11,12 +11,31 @@
 
 #define pin A6
 
+
+/********************************/
+/*                              */
+/********************************/
 void setup () {
   Serial.begin (9600);
   pinMode (pin, INPUT);
 }
 
-void loop () {
+void loop () 
+{
+  distanceSensor_test();
+}
+
+
+
+
+
+
+
+
+
+
+void distanceSensor_test()
+{
   uint16_t value = analogRead (pin);
   uint16_t range = get_gp2d12 (value);
   Serial.println (value);
