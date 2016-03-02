@@ -50,11 +50,21 @@ void loop()
     digitalWrite(Mvl,LOW); 
     digitalWrite(Mvr,LOW);
     digitalWrite(Mhl,LOW);      
+    analogWrite(Ehr, 255);   //PWM Speed Control
+    analogWrite(Evl, 255);   //PWM Speed Control
+    analogWrite(Evr, 255);   //PWM Speed Control
+    analogWrite(Ehl, 255);   //PWM Speed Control
+   
+    delay(3000);
+    
     analogWrite(Ehr, 0);   //PWM Speed Control
     analogWrite(Evl, 0);   //PWM Speed Control
     analogWrite(Evr, 0);   //PWM Speed Control
-    analogWrite(Ehl, 0);   //PWM Speed Control
-    delay(30); 
+    analogWrite(Ehl, 0);   //PWM Speed Control 
+    while(1)
+    {
+      
+    }
   }  
 }
 
