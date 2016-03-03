@@ -1,0 +1,88 @@
+%implements s3_b0_1fhgd_0_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+real_T rtu_enable_0;
+uint8_T rtu_enable_1;
+%closefile localVarDecl
+/* Switch: '<Root>/Switch' incorporates:
+ *  Constant: '<Root>/Constant2'
+ */
+if (/*@>35*/*rtu_enable/*@>35*/ > motor_vl_P.Switch_Threshold) {
+    rtu_enable_0 = /*@>35*/*rtu_direction;
+} else {
+    rtu_enable_0 = motor_vl_P.Constant2_Value;
+}
+/* End of Switch: '<Root>/Switch' */
+
+/* DataTypeConversion: '<S1>/Data Type Conversion' */
+if (rtu_enable_0/*@>11:114*/ < 256.0) {
+    if (rtu_enable_0/*@>11:114*/ >= 0.0) {
+        rtu_enable_1 = (uint8_T)rtu_enable_0;
+    } else {
+        rtu_enable_1 = 0U;
+    }
+} else {
+    rtu_enable_1 = MAX_uint8_T;
+}
+/* End of DataTypeConversion: '<S1>/Data Type Conversion' */
+
+/* S-Function (arduinodigitaloutput_sfcn): '<S1>/Digital Output' */
+MW_digitalWrite(motor_vl_P.DigitalOutput_pinNumber, rtu_enable_1);
+/* Switch: '<Root>/Switch1' incorporates:
+ *  Constant: '<Root>/Constant3'
+ */
+if (/*@>36*/*rtu_enable/*@>36*/ > motor_vl_P.Switch1_Threshold) {
+    rtu_enable_0 = /*@>36*/*rtu_power;
+} else {
+    rtu_enable_0 = motor_vl_P.Constant3_Value;
+}
+/* End of Switch: '<Root>/Switch1' */
+
+/* DataTypeConversion: '<S2>/Data Type Conversion' */
+if (rtu_enable_0/*@>12:114*/ < 256.0) {
+    if (rtu_enable_0/*@>12:114*/ >= 0.0) {
+        rtu_enable_1 = (uint8_T)rtu_enable_0;
+    } else {
+        rtu_enable_1 = 0U;
+    }
+} else {
+    rtu_enable_1 = MAX_uint8_T;
+}
+/* End of DataTypeConversion: '<S2>/Data Type Conversion' */
+
+/* S-Function (arduinoanalogoutput_sfcn): '<S2>/PWM' */
+MW_analogWrite(motor_vl_P.PWM_pinNumber, rtu_enable_1);
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(0, 2, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 2, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, SLibSystemFcnPeriodicRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface))
+%<SLibCG_UndoAccessArg(0, 2, 0)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void motor_vl(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 2, 0)
+%<comma>%<tSimStructType> * const %<tSimStruct>\
+%assign comma = ", "
+%endif
+%<comma>const real_T *rtu_enable\
+%assign comma = ", "
+%<comma>const real_T *rtu_power\
+%assign comma = ", "
+%<comma>const real_T *rtu_direction\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction

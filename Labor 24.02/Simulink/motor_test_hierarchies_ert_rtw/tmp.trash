@@ -1,0 +1,9 @@
+
+avrdude: AVR device initialized and ready to accept instructions
+avrdude: Device signature = 0x1e9801
+avrdude: reading input file "../motor_test_hierarchies.hex"
+avrdude: writing flash (23186 bytes):
+avrdude: 23186 bytes of flash written
+
+avrdude done.  Thank you.
+

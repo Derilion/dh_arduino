@@ -1,0 +1,114 @@
+%%
+%% Copyright MathWorks 2014
+%%
+
+%implements "arduino_interrupt" "C"
+
+%include "arduino_int_lib.tlc"
+
+%% Function: BlockInstanceSetup ================================================
+%% Abstract:
+%%      Setup ISR function name. Warn if output not connected.
+%%
+%function BlockInstanceSetup(block, system) void
+  
+    %% Get parameters from s-function mask and add them to record shared
+    %% by all functions here
+    %addtorecord SFcnParamSettings IntNumber ""
+    %addtorecord SFcnParamSettings PinNumber ""
+    %addtorecord SFcnParamSettings IntMode ""
+    %assign SFcnParamSettings.IntNumber = CAST("Number",SFcnParamSettings.IntNumber[0])
+    %assign SFcnParamSettings.PinNumber = CAST("Number",SFcnParamSettings.PinNumber[0])
+    %assign SFcnParamSettings.IntMode = CAST("String",SFcnParamSettings.IntMode)
+
+    %% Add a fieled with the isr function name to the record shared 
+    %% by all functions
+    %addtorecord SFcnParamSettings ISRName ""
+
+    %% Check if the async output is connected to another block
+    %if LibIsEqual(SFcnSystemOutputCall[0].BlockToCall, "unconnected")
+      %% The element is not connected to anything
+      %assign wrnTxt = "No code will be generated for INT.%<SFcnParamSettings.IntNumber> "\
+      "since it is not connected to a system."
+      %<LibReportWarning(wrnTxt)>
+      %assign SFcnParamSettings.ISRName = ""
+      %return
+    %endif
+
+    %% Create the isr function name and assign to record
+    %assign isrFuncName  = "isr_int%<SFcnParamSettings.IntNumber>"
+    %assign SFcnParamSettings.ISRName = isrFuncName
+ 
+%endfunction
+      
+%% Function: Outputs ===========================================================
+%% Abstract:
+%%      Create the ISR function.
+%%
+%function Outputs(block, system) Output
+
+    %if LibIsEqual(SFcnSystemOutputCall[0].BlockToCall, "unconnected")
+      %return
+    %endif
+
+    %% Get the downstream block
+    %assign ssBlock = LibGetFcnCallBlock(block,0)
+
+    %% Call the downstream f-c subsystem, it can inline
+    %openfile tmpBuf
+    %<LibBlockExecuteFcnCall(block, 0)>\
+    %closefile tmpBuf
+    %% Alwarys create the ISR function
+    %openfile funcbuf
+    /* Arduino Interrupt Block: '%<Name>' */
+    void %<SFcnParamSettings.ISRName>(void)
+    {
+      %if WHITE_SPACE(tmpBuf)
+	/* Nothing to do for system: '%<ssBlock.Name>' */
+      %else
+
+
+	/* Call the system: '%<ssBlock.Name>' */
+        %<tmpBuf>\
+      %endif
+    }
+    
+    %closefile funcbuf
+    %assign srcFile = LibGetModelDotCFile()
+    %<LibSetSourceFileSection(srcFile, "Functions", funcbuf)>
+%endfunction
+
+%% Function: Start =============================================================
+%% Abstract:
+%%      Connect and enable each ISR in the model's start function.
+%%
+%function Start(block, system) Output
+    %if LibIsEqual(SFcnSystemOutputCall[0].BlockToCall, "unconnected")
+      %return
+    %endif
+    %%assign number       = CAST("Number",SFcnParamSettings.IntNumber[0])
+    %%assign isrFuncName  = SFcnParamSettings.ISRName
+    /* Arduino Interrupt Block: '%<Name>' */
+    /* Connect and enable ISR function: %<SFcnParamSettings.ISRName> */
+    pinMode(%<SFcnParamSettings.PinNumber>, INPUT);
+    attachInterrupt(%<SFcnParamSettings.IntNumber>, %<SFcnParamSettings.ISRName>, %<SFcnParamSettings.IntMode>);
+
+%endfunction
+
+%% Function: Terminate =========================================================
+%% Abstract:
+%%      Disable each ISR in the model's terminate function.
+%%
+%function Terminate(block, system) Output
+ 
+    %if LibIsEqual(SFcnSystemOutputCall[0].BlockToCall, "unconnected")
+      %return
+    %endif
+
+    /* Arduino Interrupt Block: '%<Name>' */
+    /* Disable interrupt for ISR system: %<SFcnParamSettings.ISRName> */
+    detachInterrupt(%<SFcnParamSettings.IntNumber>);
+    
+%endfunction
+
+%% [EOF] arduino_interrupt.tlc

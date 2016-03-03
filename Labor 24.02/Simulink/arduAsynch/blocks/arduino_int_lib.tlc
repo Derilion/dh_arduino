@@ -1,0 +1,37 @@
+%%
+%% Copyright MathWorks 2014
+%%
+
+%if !EXISTS("_ARDUINOLIB_")
+  %assign ::_ARDUINOLIB_ = 1
+  
+  %%
+  %% Need Arduino include files
+  %%
+  %openfile buffer
+  /* include header files for Arduino calls */
+  #include "Arduino.h"
+  
+  %closefile buffer
+  %<LibCacheDefine(buffer)>
+  
+%endif  %% _ARDUINOLIB_
+
+%% [EOF] arduinolib.tlc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

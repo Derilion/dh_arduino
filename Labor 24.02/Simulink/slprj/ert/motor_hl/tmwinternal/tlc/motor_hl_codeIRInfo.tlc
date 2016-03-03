@@ -1,0 +1,35 @@
+%function FcnLoadCodeIRInfo() Output 
+codeIRInfoStruct = load('C:\Users\Joern\Documents\github\dh_arduino\Labor 24.02\Simulink\slprj\ert\motor_hl\tmwinternal\tlc\codeIRInfo.mat');
+codeInfo = codeIRInfoStruct.codeInfo;
+%endfunction
+
+%function FcnGetIsInheritedSampleTime() void
+%assign tmpIdx = 1
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetDSMIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetEIIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetRootInportsMapFromIRInfo() void
+%assign tmpIdx = Matrix(3,2)[[0, 0]; [1, 1]; [2, 2]; ]
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetEOIdxFromIRInfo() void
+%assign tmpIdx = []
+%return tmpIdx 
+%endfunction
+
+%function FcnGetUnsetParamIdxFromIRInfo() void
+%assign tmpIdx = Matrix(2,2)[[0, 0]; [1, 1]; ]
+%return tmpIdx 
+%endfunction
+
