@@ -3,8 +3,8 @@ disp('Anfang');
 load test_daten;
 
 % Filter Parametrierung
-fcut = 25; % 
-n    = 2;
+fcut = 1; % 
+n    = 3;
 r    = 3;
 dt   = 0.01;
 
