@@ -1,0 +1,9 @@
+
+avrdude: AVR device initialized and ready to accept instructions
+avrdude: Device signature = 0x1e9801
+avrdude: reading input file "../Wheelspeed3.hex"
+avrdude: writing flash (25026 bytes):
+avrdude: 25026 bytes of flash written
+
+avrdude done.  Thank you.
+
