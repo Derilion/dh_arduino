@@ -1,0 +1,69 @@
+% \subject{Diplomarbeit \\ Universität <einfügen>}
+% \title{<Titel einfügen>}
+% \author{<Autor einfügen>}
+% \date{<Datum einfügen>}
+% \maketitle
+
+% \begin{titlepage}
+% 	\mbox{}\vspace{5\baselineskip}\\
+% 	\sffamily\huge
+% 	\centering
+% 	<Titel einfügen>
+% 	\vspace{3\baselineskip}\\
+% 	\rmfamily\Large
+% 	Diplomarbeit \\ Universität <einfügen>
+% 	\vspace{2\baselineskip}\\
+% 	\rmfamily\Large
+% 	<Autor einfügen>
+% 	\vspace{1\baselineskip}\\
+% 	<Datum einfügen>
+% \end{titlepage}
+
+
+\begin{titlepage}
+\pagenumbering{Alph}
+   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+   	\includegraphics[height=2cm]{images/Bosch_Logo_DE} & \includegraphics[height=2cm]{images/dhbw}\\
+   \end{tabular*}
+   
+   \vspace*{0.5cm}
+   \begin{center}
+   	\Large \thema \\
+   	
+   	%\ifx\vertraulich\true
+   	\begin{tikzpicture}
+   	\tikz\draw[fill=red,draw=red](-5,2)
+   	circle (1cm);
+   	\end{tikzpicture}
+   	%\else
+   	\vspace{-1cm}
+   	%\fi
+   	
+   	\textbf{\Large BACHELORARBEIT}\\
+   	\vspace*{2cm}
+   	\normalsize
+   	für die Prüfung zum\\
+   	~\\
+   	Bachelor of Engineering\\
+   	\vspace*{0.8cm}
+   	des Studienganges \studienrichtung \\
+   	~\\
+   	an der Dualen Hochschule Baden-Württemberg Stuttgart \\
+   	~\\
+   	~\\
+   	von \\
+   	\vspace*{1cm}
+   	\name \\
+   	\vspace*{1cm}
+   	\modulende \\
+   	\vspace*{1cm} 
+   \begin{tabularx}{\textwidth}{p{0.5\textwidth{}}lXl} 
+   	Bearbeitungszeitraum: 				& \modulbegin~--~\modulende	\\
+   	Kurs, Matrikelnummer: 				& \kurs,~\matrikel			\\
+   	Ausbildungsfirma: 					& Robert Bosch GmbH			\\
+									   	& \standort					\\
+   	Betreuer der Ausbildungsfirma: 		& \betreuer					\\
+   	Gutachter der Dualen Hochschule:	& \gutachter				\\
+   	\end{tabularx}
+   \end{center}
+\end{titlepage}
