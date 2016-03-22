@@ -5,17 +5,11 @@
  *
  * File: ert_main.c
  *
- * Code generated for Simulink model 'untitled2'.
+ * Code generated for Simulink model 'Geschwindigkeitsregler'.
  *
-<<<<<<< HEAD:Labor 02-24/Simulink/untitled2_ert_rtw/ert_main.c
- * Model version                  : 1.0
+ * Model version                  : 1.15
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
- * C/C++ source code generated on : Wed Mar 02 14:23:54 2016
-=======
- * Model version                  : 1.16
- * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
- * C/C++ source code generated on : Wed Mar 16 17:58:00 2016
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/ert_main.c
+ * C/C++ source code generated on : Wed Mar 16 17:36:24 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -23,7 +17,7 @@
  * Validation result: Not run
  */
 
-#include "untitled2.h"
+#include "Geschwindigkeitsregler.h"
 #include "rtwtypes.h"
 #include <ext_work.h>
 #include <ext_svr.h>
@@ -42,7 +36,7 @@ void rt_OneStep(void)
   }
 
   sei();
-  untitled2_step();
+  Geschwindigkeitsregler_step();
 
   /* Get model outputs here */
   cli();
@@ -53,26 +47,18 @@ void rt_OneStep(void)
 int main(void)
 {
   volatile boolean_T runModel = 1;
-  float modelBaseRate = 2.0;
+  float modelBaseRate = 0.01;
   float systemClock = 0;
   init();
   MW_Arduino_Init();
-  rtmSetErrorStatus(untitled2_M, 0);
+  rtmSetErrorStatus(Geschwindigkeitsregler_M, 0);
 
   /* initialize external mode */
   rtParseArgsForExtMode(0, NULL);
-  untitled2_initialize();
+  Geschwindigkeitsregler_initialize();
   sei();
 
   /* External mode */
-<<<<<<< HEAD:Labor 02-24/Simulink/untitled2_ert_rtw/ert_main.c
-  rtSetTFinalForExtMode(&rtmGetTFinal(untitled2_M));
-  rtExtModeCheckInit(1);
-
-  {
-    boolean_T rtmStopReq = false;
-    rtExtModeWaitForStartPkt(untitled2_M->extModeInfo, 1, &rtmStopReq);
-=======
   rtSetTFinalForExtMode(&rtmGetTFinal(Geschwindigkeitsregler_M));
   rtExtModeCheckInit(2);
 
@@ -80,9 +66,8 @@ int main(void)
     boolean_T rtmStopReq = false;
     rtExtModeWaitForStartPkt(Geschwindigkeitsregler_M->extModeInfo, 2,
       &rtmStopReq);
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/ert_main.c
     if (rtmStopReq) {
-      rtmSetStopRequested(untitled2_M, true);
+      rtmSetStopRequested(Geschwindigkeitsregler_M, true);
     }
   }
 
@@ -90,27 +75,23 @@ int main(void)
   cli();
   configureArduinoAVRTimer();
   runModel =
-    (rtmGetErrorStatus(untitled2_M) == (NULL)) && !rtmGetStopRequested
-    (untitled2_M);
+    (rtmGetErrorStatus(Geschwindigkeitsregler_M) == (NULL)) &&
+    !rtmGetStopRequested(Geschwindigkeitsregler_M);
   sei();
   sei();
   while (runModel) {
     /* External mode */
     {
       boolean_T rtmStopReq = false;
-<<<<<<< HEAD:Labor 02-24/Simulink/untitled2_ert_rtw/ert_main.c
-      rtExtModeOneStep(untitled2_M->extModeInfo, 1, &rtmStopReq);
-=======
       rtExtModeOneStep(Geschwindigkeitsregler_M->extModeInfo, 2, &rtmStopReq);
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/ert_main.c
       if (rtmStopReq) {
-        rtmSetStopRequested(untitled2_M, true);
+        rtmSetStopRequested(Geschwindigkeitsregler_M, true);
       }
     }
 
     runModel =
-      (rtmGetErrorStatus(untitled2_M) == (NULL)) && !rtmGetStopRequested
-      (untitled2_M);
+      (rtmGetErrorStatus(Geschwindigkeitsregler_M) == (NULL)) &&
+      !rtmGetStopRequested(Geschwindigkeitsregler_M);
   }
 
   rtExtModeShutdown(2);
@@ -118,7 +99,7 @@ int main(void)
   /* Disable rt_OneStep() here */
 
   /* Terminate model */
-  untitled2_terminate();
+  Geschwindigkeitsregler_terminate();
   cli();
   return 0;
 }

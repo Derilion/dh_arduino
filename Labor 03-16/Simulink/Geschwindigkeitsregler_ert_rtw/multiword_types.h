@@ -5,17 +5,11 @@
  *
  * File: multiword_types.h
  *
- * Code generated for Simulink model 'ArduinoTests'.
+ * Code generated for Simulink model 'Geschwindigkeitsregler'.
  *
-<<<<<<< HEAD:Labor 02-24/Simulink/ArduinoTests_ert_rtw/multiword_types.h
- * Model version                  : 1.4
+ * Model version                  : 1.15
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
- * C/C++ source code generated on : Wed Feb 24 17:40:41 2016
-=======
- * Model version                  : 1.16
- * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
- * C/C++ source code generated on : Wed Mar 16 17:58:00 2016
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/multiword_types.h
+ * C/C++ source code generated on : Wed Mar 16 17:36:24 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR

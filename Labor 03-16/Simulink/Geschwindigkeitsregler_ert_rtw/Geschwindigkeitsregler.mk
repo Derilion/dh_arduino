@@ -1,18 +1,13 @@
 ###########################################################################
-## Makefile generated for Simulink model 'motor_test_hierarchies'. 
+## Makefile generated for Simulink model 'Geschwindigkeitsregler'. 
 ## 
-<<<<<<< HEAD:Labor 02-24/Simulink/motor_test_hierarchies_ert_rtw/motor_test_hierarchies.mk
-## Makefile     : motor_test_hierarchies.mk
-## Generated on : Wed Mar 16 13:12:23 2016
-=======
 ## Makefile     : Geschwindigkeitsregler.mk
-## Generated on : Wed Mar 16 17:40:11 2016
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/Geschwindigkeitsregler.mk
+## Generated on : Wed Mar 16 17:05:00 2016
 ## MATLAB Coder version: 3.0 (R2015b)
 ## 
 ## Build Info:
 ## 
-## Final product: $(RELATIVE_PATH_TO_ANCHOR)/motor_test_hierarchies.elf
+## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Geschwindigkeitsregler.elf
 ## Product type : executable
 ## Build type   : Top-Level Standalone Executable
 ## 
@@ -27,20 +22,20 @@
 # MAKEFILE                Name of this makefile
 # COMPUTER                Computer type. See the MATLAB "computer" command.
 
-PRODUCT_NAME              = motor_test_hierarchies
-MAKEFILE                  = motor_test_hierarchies.mk
+PRODUCT_NAME              = Geschwindigkeitsregler
+MAKEFILE                  = Geschwindigkeitsregler.mk
 COMPUTER                  = PCWIN64
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2015b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2015b/bin
 MATLAB_ARCH_BIN           = C:/PROGRA~1/MATLAB/R2015b/bin/win64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = C:/Users/Joern/DOCUME~1/github/DH_ARD~1/LABOR2~1.02/Simulink
+START_DIR                 = C:/Users/Joern/DOCUME~1/github/DH_ARD~1/LABOR0~1/Simulink
 ARCH                      = win64
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
 TGT_FCN_LIB               = None
-MODELREF_LINK_RSPFILE_NAME = motor_test_hierarchies_ref.rsp
+MODELREF_LINK_RSPFILE_NAME = Geschwindigkeitsregler_ref.rsp
 RELATIVE_PATH_TO_ANCHOR   = ..
 
 ###########################################################################
@@ -218,7 +213,7 @@ MAKE_EXT            = .mk
 ## OUTPUT INFO
 ###########################################################################
 
-PRODUCT = $(RELATIVE_PATH_TO_ANCHOR)/motor_test_hierarchies.elf
+PRODUCT = $(RELATIVE_PATH_TO_ANCHOR)/Geschwindigkeitsregler.elf
 PRODUCT_TYPE = "executable"
 BUILD_TYPE = "Top-Level Standalone Executable"
 
@@ -226,7 +221,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -IC:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/include -IC:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include -I$(START_DIR)/motor_test_hierarchies_ert_rtw -I$(START_DIR) -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino -I$(ARDUINO_ROOT)/hardware/arduino/avr/variants/mega -IC:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../include -IC:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/include
+INCLUDES_BUILDINFO = -IC:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/include -IC:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/blocks/sfcn/include -I$(START_DIR)/Geschwindigkeitsregler_ert_rtw -I$(START_DIR) -I$(START_DIR)/Ableitung/final -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino -I$(ARDUINO_ROOT)/hardware/arduino/avr/variants/mega -IC:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../include -IC:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -234,19 +229,11 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-<<<<<<< HEAD:Labor 02-24/Simulink/motor_test_hierarchies_ert_rtw/motor_test_hierarchies.mk
-DEFINES_ = -DMODEL=motor_test_hierarchies -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DON_TARGET_WAIT_FOR_START=1 -DONESTEPFCN=1 -DEXT_MODE=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=1 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DEXIT_FAILURE=1 -DEXTMODE_DISABLEPRINTF -DEXTMODE_DISABLETESTING -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DRT -DSTACK_SIZE=64 -DMW_TIMERID=5 -DMW_PRESCALAR=1024 -DMW_TIMERCOUNT=49911 -DMW_SCHEDULERCOUNTER=1 -D_RTT_BAUDRATE_SERIAL0_=9600 -D_RTT_BAUDRATE_SERIAL1_=9600 -D_RTT_BAUDRATE_SERIAL2_=9600 -D_RTT_BAUDRATE_SERIAL3_=9600 -D_RTT_ANALOG_REF_=0
-DEFINES_BUILD_ARGS = -DONESTEPFCN=1 -DEXT_MODE=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0
-DEFINES_OPTS = -DON_TARGET_WAIT_FOR_START=1 -DTID01EQ=1
-DEFINES_SKIPFORSIL = -DEXIT_FAILURE=1 -DEXTMODE_DISABLEPRINTF -DEXTMODE_DISABLETESTING -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DRT -DSTACK_SIZE=64
-DEFINES_STANDARD = -DMODEL=motor_test_hierarchies -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO
-=======
 DEFINES_ = -DMODEL=Geschwindigkeitsregler -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DON_TARGET_WAIT_FOR_START=1 -DONESTEPFCN=1 -DEXT_MODE=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=1 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DEXIT_FAILURE=1 -DEXTMODE_DISABLEPRINTF -DEXTMODE_DISABLETESTING -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DRT -DSTACK_SIZE=64 -DMW_TIMERID=5 -DMW_PRESCALAR=256 -DMW_TIMERCOUNT=64911 -DMW_SCHEDULERCOUNTER=1 -D_RTT_BAUDRATE_SERIAL0_=9600 -D_RTT_BAUDRATE_SERIAL1_=9600 -D_RTT_BAUDRATE_SERIAL2_=9600 -D_RTT_BAUDRATE_SERIAL3_=9600 -D_RTT_ANALOG_REF_=0
 DEFINES_BUILD_ARGS = -DONESTEPFCN=1 -DEXT_MODE=1 -DTERMFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0
 DEFINES_OPTS = -DON_TARGET_WAIT_FOR_START=1 -DTID01EQ=1
 DEFINES_SKIPFORSIL = -DEXIT_FAILURE=1 -DEXTMODE_DISABLEPRINTF -DEXTMODE_DISABLETESTING -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DRT -DSTACK_SIZE=64
 DEFINES_STANDARD = -DMODEL=Geschwindigkeitsregler -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/Geschwindigkeitsregler.mk
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
 
@@ -254,9 +241,9 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/motor_test_hierarchies_ert_rtw/motor_test_hierarchies.c $(START_DIR)/motor_test_hierarchies_ert_rtw/motor_test_hierarchies_data.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/hooks.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WInterrupts.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_analog.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_digital.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_pulse.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_shift.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/abi.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/CDC.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HID.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/IPAddress.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/new.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Print.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Stream.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Tone.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/USBCore.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WMath.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WString.cpp C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/ext_serial_pkt.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/rtiostream_serial_interface.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/ext_svr_serial_transport.c C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial.cpp
+SRCS = $(START_DIR)/Geschwindigkeitsregler_ert_rtw/Geschwindigkeitsregler.c $(START_DIR)/Geschwindigkeitsregler_ert_rtw/Geschwindigkeitsregler_data.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/hooks.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WInterrupts.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_analog.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_digital.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_pulse.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/wiring_shift.c $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/abi.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/CDC.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/HID.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/IPAddress.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/new.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Print.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Stream.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/Tone.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/USBCore.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WMath.cpp $(ARDUINO_ROOT)/hardware/arduino/avr/cores/arduino/WString.cpp C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/MATLAB/SupportPackages/R2015b/arduinobase/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/ext_serial_pkt.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/rtiostream_serial_interface.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/serial/ext_svr_serial_transport.c C:/MATLAB/SupportPackages/R2015b/arduino/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial.cpp
 
-MAIN_SRC = $(START_DIR)/motor_test_hierarchies_ert_rtw/ert_main.c
+MAIN_SRC = $(START_DIR)/Geschwindigkeitsregler_ert_rtw/ert_main.c
 
 ALL_SRCS = $(SRCS) $(MAIN_SRC)
 
@@ -264,7 +251,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = motor_test_hierarchies.o motor_test_hierarchies_data.o ext_svr.o updown.o ext_work.o rtiostream_utils.o hooks.o WInterrupts.o wiring.o wiring_analog.o wiring_digital.o wiring_pulse.o wiring_shift.o abi.o CDC.o HardwareSerial.o HardwareSerial0.o HardwareSerial1.o HardwareSerial2.o HardwareSerial3.o HID.o IPAddress.o new.o Print.o Stream.o Tone.o USBCore.o WMath.o WString.o MW_ArduinoHWInit.o io_wrappers.o arduinoAVRScheduler.o ext_serial_pkt.o rtiostream_serial_interface.o ext_svr_serial_transport.o rtiostream_serial.o
+OBJS = Geschwindigkeitsregler.o Geschwindigkeitsregler_data.o ext_svr.o updown.o ext_work.o rtiostream_utils.o hooks.o WInterrupts.o wiring.o wiring_analog.o wiring_digital.o wiring_pulse.o wiring_shift.o abi.o CDC.o HardwareSerial.o HardwareSerial0.o HardwareSerial1.o HardwareSerial2.o HardwareSerial3.o HID.o IPAddress.o new.o Print.o Stream.o Tone.o USBCore.o WMath.o WString.o MW_ArduinoHWInit.o io_wrappers.o arduinoAVRScheduler.o ext_serial_pkt.o rtiostream_serial_interface.o ext_svr_serial_transport.o rtiostream_serial.o
 
 MAIN_OBJ = ert_main.o
 
@@ -430,15 +417,15 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : $(START_DIR)/motor_test_hierarchies_ert_rtw/%.c
+%.o : $(START_DIR)/Geschwindigkeitsregler_ert_rtw/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.o : $(START_DIR)/motor_test_hierarchies_ert_rtw/%.s
+%.o : $(START_DIR)/Geschwindigkeitsregler_ert_rtw/%.s
 	$(AS) $(ASFLAGS)  "$@" "$<"
 
 
-%.o : $(START_DIR)/motor_test_hierarchies_ert_rtw/%.cpp
+%.o : $(START_DIR)/Geschwindigkeitsregler_ert_rtw/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

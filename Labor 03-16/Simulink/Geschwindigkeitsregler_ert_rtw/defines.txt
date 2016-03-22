@@ -1,10 +1,5 @@
-<<<<<<< HEAD:Labor 02-24/Simulink/Motor_Test_All_ert_rtw/defines.txt
-MODEL=Motor_Test_All
-NUMST=1
-=======
 MODEL=Geschwindigkeitsregler
 NUMST=2
->>>>>>> Endstand Labor 16.03.16:Labor 03-16/Simulink/Ableitung/final/Geschwindigkeitsregler_ert_rtw/defines.txt
 NCSTATES=0
 HAVESTDIO
 ON_TARGET_WAIT_FOR_START=1
