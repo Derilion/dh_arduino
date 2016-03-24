@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Geschwindigkeitsregler'.
  *
- * Model version                  : 1.16
+ * Model version                  : 1.23
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
- * C/C++ source code generated on : Wed Mar 16 17:58:00 2016
+ * C/C++ source code generated on : Wed Mar 23 16:01:11 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -26,7 +26,7 @@
 /* Parameters for system: '<S1>/hl' */
 typedef struct P_hl_Geschwindigkeitsregler_T_ P_hl_Geschwindigkeitsregler_T;
 
-/* Parameters for system: '<S20>/Subsystem' */
+/* Parameters for system: '<S23>/Subsystem' */
 typedef struct P_Subsystem_Geschwindigkeitsr_T_ P_Subsystem_Geschwindigkeitsr_T;
 
 /* Parameters (auto storage) */

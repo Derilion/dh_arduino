@@ -2,8 +2,8 @@
 avrdude: AVR device initialized and ready to accept instructions
 avrdude: Device signature = 0x1e9801
 avrdude: reading input file "../Geschwindigkeitsregler.hex"
-avrdude: writing flash (31006 bytes):
-avrdude: 31006 bytes of flash written
+avrdude: writing flash (37314 bytes):
+avrdude: 37314 bytes of flash written
 
 avrdude done.  Thank you.
 

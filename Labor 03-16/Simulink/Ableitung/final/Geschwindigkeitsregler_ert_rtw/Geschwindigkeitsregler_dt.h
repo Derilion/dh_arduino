@@ -7,9 +7,9 @@
  *
  * Code generation for model "Geschwindigkeitsregler".
  *
- * Model version              : 1.16
+ * Model version              : 1.23
  * Simulink Coder version : 8.9 (R2015b) 13-Aug-2015
- * C source code generated on : Wed Mar 16 17:58:00 2016
+ * C source code generated on : Wed Mar 23 16:01:11 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -57,11 +57,15 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&Geschwindigkeitsregler_B.Gain2), 0, 0, 20 },
+  { (char_T *)(&Geschwindigkeitsregler_B.FromWs[0]), 0, 0, 40 },
 
   { (char_T *)(&Geschwindigkeitsregler_B.DataTypeConversion), 3, 0, 2 },
 
   { (char_T *)(&Geschwindigkeitsregler_B.Subsystem3.Add), 0, 0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_B.Subsystem2.Add), 0, 0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_B.Subsystem1.Add), 0, 0, 1 },
 
   { (char_T *)(&Geschwindigkeitsregler_B.Subsystem.Add), 0, 0, 1 },
 
@@ -71,19 +75,27 @@ static DataTypeTransition rtBTransitions[] = {
   ,
 
   { (char_T *)(&Geschwindigkeitsregler_DW.Zustandsvariablenfilter_DSTATE[0]), 0,
-    0, 16 },
+    0, 32 },
 
-  { (char_T *)(&Geschwindigkeitsregler_DW.FromWs_PWORK.TimePtr), 11, 0, 9 },
+  { (char_T *)(&Geschwindigkeitsregler_DW.FromWs_PWORK.TimePtr), 11, 0, 5 },
 
   { (char_T *)(&Geschwindigkeitsregler_DW.FromWs_IWORK.PrevIndex), 10, 0, 1 },
 
   { (char_T *)(&Geschwindigkeitsregler_DW.DelayInput1_DSTATE), 8, 0, 4 },
 
-  { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem1_SubsysRanBC), 2, 0, 2 },
-
   { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem3.Delay_DSTATE), 0, 0, 1 },
 
   { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem3.Subsystem_SubsysRanBC), 2,
+    0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem2.Delay_DSTATE), 0, 0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem2.Subsystem_SubsysRanBC), 2,
+    0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem1.Delay_DSTATE), 0, 0, 1 },
+
+  { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem1.Subsystem_SubsysRanBC), 2,
     0, 1 },
 
   { (char_T *)(&Geschwindigkeitsregler_DW.Subsystem.Delay_DSTATE), 0, 0, 1 },
@@ -94,29 +106,37 @@ static DataTypeTransition rtBTransitions[] = {
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  15U,
+  20U,
   rtBTransitions
 };
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&Geschwindigkeitsregler_P.AB1[0]), 0, 0, 28 },
+  { (char_T *)(&Geschwindigkeitsregler_P.AB1[0]), 0, 0, 36 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.DigitalOutput_pinNumber), 7, 0, 4 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.DetectRisePositive_vinit), 8, 0, 4 },
 
-  { (char_T *)(&Geschwindigkeitsregler_P.Constant2_Value), 0, 0, 112 },
+  { (char_T *)(&Geschwindigkeitsregler_P.Constant2_Value), 0, 0, 199 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.HL_p1), 7, 0, 4 },
-
-  { (char_T *)(&Geschwindigkeitsregler_P.Delay_DelayLength), 5, 0, 1 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.Constant_Value_k), 8, 0, 4 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.Subsystem3.Constant1_Value), 0, 0, 5 },
 
   { (char_T *)(&Geschwindigkeitsregler_P.Subsystem3.Delay_DelayLength), 5, 0, 1
+  },
+
+  { (char_T *)(&Geschwindigkeitsregler_P.Subsystem2.Constant1_Value), 0, 0, 5 },
+
+  { (char_T *)(&Geschwindigkeitsregler_P.Subsystem2.Delay_DelayLength), 5, 0, 1
+  },
+
+  { (char_T *)(&Geschwindigkeitsregler_P.Subsystem1.Constant1_Value), 0, 0, 5 },
+
+  { (char_T *)(&Geschwindigkeitsregler_P.Subsystem1.Delay_DelayLength), 5, 0, 1
   },
 
   { (char_T *)(&Geschwindigkeitsregler_P.Subsystem.Constant1_Value), 0, 0, 5 },
@@ -134,7 +154,7 @@ static DataTypeTransition rtPTransitions[] = {
 
 /* data type transition table for Parameters structure */
 static DataTypeTransitionTable rtPTransTable = {
-  15U,
+  18U,
   rtPTransitions
 };
 
